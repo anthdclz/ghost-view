@@ -1,5 +1,8 @@
 import React from 'react';
 import WallItem from '../../components/wall-item/wall-item.component';
+import imgWaveOrange from '../../assets/gallery-items/new_wave_64.10551032303746.svg';
+import imgWaveBlue from '../../assets/gallery-items/new_wave_447.14939221550185.svg';
+import imgWaveGreen from '../../assets/gallery-items/new_wave_522.7252551408126.svg';
 
 import './wall.styles.scss';
 
@@ -11,21 +14,21 @@ class Wall extends React.Component {
             exhibits: [
                 {
                     id: 1,
-                    title: 'feature 1',
-                    imgUrl: 'img1',
-                    linkUrl: 'shop/hats'
+                    title: 'gallery',
+                    imgUrl: imgWaveOrange,
+                    linkUrl: 'gallery'
                   },
                   {
                     id: 2,
-                    title: 'f2',
-                    imgUrl: 'png2',
-                    linkUrl: 'shop/jackets'
+                    title: 'browse',
+                    imgUrl: imgWaveBlue,
+                    linkUrl: 'browse'
                   },
                   {
                     id: 3,
-                    title: 'image 3',
-                    imgUrl: 'svg3',
-                    linkUrl: 'shop/sneakers'
+                    title: 'trey',
+                    imgUrl: imgWaveGreen,
+                    linkUrl: 'trey'
                   }
             ]
         }
@@ -36,8 +39,8 @@ class Wall extends React.Component {
         return(
             <div className='wall'>
                 {
-                    this.state.exhibits.map(({id, title, imageUrl, linkUrl}) => (
-                        <WallItem key={id} title={title} />
+                    this.state.exhibits.map(({id, ...otherProps}) => (
+                        <WallItem key={id} {...otherProps} />
                     ))
                 }
             </div>    

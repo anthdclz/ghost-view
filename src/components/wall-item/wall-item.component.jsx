@@ -1,9 +1,16 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './wall-item.styles.scss';
 
-const WallItem = ({title}) => (
-    <div className='wall-item'>
+const WallItem = ({title, linkUrl, imgUrl, history, match}) => (
+    <div className='wall-item' onClick={ () => history.push(`${match.url}${linkUrl}`)}>
+        <div
+            className='background-image'
+            style={{
+                backgroundImage: `url(${imgUrl})`
+            }} 
+        />
         <div className='content'>
             <div className='title'>
             {title}
@@ -12,4 +19,4 @@ const WallItem = ({title}) => (
     </div>
 );
 
-export default WallItem;
+export default withRouter(WallItem);

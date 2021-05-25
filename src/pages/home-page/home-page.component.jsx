@@ -1,7 +1,7 @@
 import React from 'react';
 import Wall from '../../components/wall/wall.component';
 
-import './homepage.styles.scss';
+import './home-page.styles.scss';
 
 const HomePage = () => (
     <div>
