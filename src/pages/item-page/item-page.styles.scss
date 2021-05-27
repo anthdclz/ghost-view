@@ -1,5 +1,9 @@
-.item_page {
+.item-page {
     position: relative;
+
+    & .title{
+        font-size: 25px;
+    }
 }
 
 .overlay-text {

@@ -7,10 +7,10 @@ body {
   color: #eee;
 
   & .page {
-    padding: 20px 60px;
+    padding: 90px 60px 20px;
 
     @media screen and (max-width:900px) {
-      padding: 20px;
+      padding: 90px 20px 20px;
     }
   }
 }

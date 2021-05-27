@@ -6,14 +6,16 @@ import NewsComponent from '../../components/news/news.component';
 import './item-page.styles.scss';
 
 class ItemPage extends React.Component {
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
-            itemPrice: null
+            itemPrice: null,
+            lastVal: null
         }
     }
     componentDidMount(){
-        console.log(this.state);
+        const d = new Date();
+        this.setState({lastVal: 49 + (d.getDate() % 8)}); 
         this.script = document.createElement("script");
         this.script.src = "https://www.gstatic.com/charts/loader.js";
         this.script.async = true;
@@ -23,7 +25,6 @@ class ItemPage extends React.Component {
     drawChart = () => {
         const google = window.google;
         const drawTrendlines = () => {
-            this.setState({itemPrice: 54});
             var data = new google.visualization.DataTable();
             data.addColumn('date', 'X');
             data.addColumn('number', 'Price');
@@ -47,26 +48,34 @@ class ItemPage extends React.Component {
                 [new Date(2021, 2, 1), 68],   [new Date(2021, 2, 8), 69],  [new Date(2021, 2, 15), 70],  [new Date(2021, 2, 22), 72], 
                 [new Date(2021, 3, 1), 75],   [new Date(2021, 3, 8), 80],  [new Date(2021, 3, 15), 72],  [new Date(2021, 3, 22), 65], 
                 [new Date(2021, 4, 1), 68],   [new Date(2021, 4, 8), 55],  [new Date(2021, 4, 15), 53],  [new Date(2021, 4, 22), 51], 
-                [new Date(2021, 5, 1), 52],   [new Date(2021, 5, 8), 54]
+                [new Date(2021, 5, 1), 52],   [new Date(2021, 5, 8), (this.state.lastVal)]
             ]);
+            console.log(this.state);
 
             var options = {
                 legend: 'none',
                 height: 300,
                 hAxis: {
                     format: 'MMM d YYYY',
-                    gridlines: {count: 12, color: '#222'}
+                    gridlines: {count: 12, color: '#222'},
+                    titleTextStyle: {
+                      color: '#FF0000'
+                    },
+                    baselineColor: '#f00'
                 },
                 vAxis: {
                     minValue:0, maxValue:100,
                     gridlines: {count: 1, color: '#444'},
-                    format: 'decimal'
+                    format: 'decimal',
+                    fontColor: '#ddd',
+                    color: '#ddd',
+                    baselineColor: '#ddd'
                 },
-                colors: ['#e70', '#d22'],
+                colors: ['#e70'],
                 trendlines: {
                     0: {type: 'linear', color: '#ccc', opacity: .3}
                 },
-                chartArea: { backgroundColor: '#222' },
+                chartArea: { backgroundColor: '#222', color: '#ddd'},
                 backgroundColor: '#222'
             };
 
@@ -79,13 +88,8 @@ class ItemPage extends React.Component {
     render(){
         return(
             <div className="item-page page">
-                <div>Item Page {this.state.itemPrice}</div>
-                <div id="chart_div">
-
-                </div>
-                <div className="overlay-text">
-                  <div>88</div>
-                </div>
+                <div className='title'>Item Page {this.state.lastVal}</div>
+                <div id="chart_div"></div>
                 <NewsComponent />
                 <DetailsComponent />
             </div>
