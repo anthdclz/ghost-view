@@ -56,26 +56,22 @@ class ItemPage extends React.Component {
                 legend: 'none',
                 height: 300,
                 hAxis: {
-                    format: 'MMM d YYYY',
+                    format: 'MMM YYYY',
                     gridlines: {count: 12, color: '#222'},
-                    titleTextStyle: {
-                      color: '#FF0000'
-                    },
-                    baselineColor: '#f00'
+                    textStyle: { fontName: 'Raleway', color: '#ddd'}
                 },
                 vAxis: {
-                    minValue:0, maxValue:100,
-                    gridlines: {count: 1, color: '#444'},
+                    minValue:0,
+                    gridlines: {count: 1, color: '#ddd'},
                     format: 'decimal',
-                    fontColor: '#ddd',
-                    color: '#ddd',
-                    baselineColor: '#ddd'
+                    baselineColor: '#ddd',
+                    textStyle: { fontName: 'Raleway', color: '#ddd'}
                 },
                 colors: ['#e70'],
                 trendlines: {
                     0: {type: 'linear', color: '#ccc', opacity: .3}
                 },
-                chartArea: { backgroundColor: '#222', color: '#ddd'},
+                chartArea: { backgroundColor: '#222', color: '#ddd', height: '75%', width: '100%'},
                 backgroundColor: '#222'
             };
 
