@@ -4,7 +4,7 @@ import Wall from '../../components/wall/wall.component';
 import './home-page.styles.scss';
 
 const HomePage = () => (
-    <div>
+    <div className="page">
         <Wall />
     </div>
 );

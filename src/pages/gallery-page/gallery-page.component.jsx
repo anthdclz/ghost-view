@@ -16,7 +16,7 @@ class GalleryPage extends React.Component {
     render(){
         console.log(this.state.gallery);
         return (
-            <div>
+            <div className="page">
                 <h2>Gallery</h2>
                 <div className='gallery-page'>
                     {this.state.gallery.map(({id, ...otherProps}) => ( 
