@@ -1,11 +1,7 @@
 .item-page {
     position: relative;
-
-    & .title{
-        font-size: 25px;
-    }
 }
 
-#chart_div {
-    
+.chart-wrapper {
+    height: 300px;
 }

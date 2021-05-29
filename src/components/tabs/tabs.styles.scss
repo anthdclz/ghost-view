@@ -1,0 +1,18 @@
+.tabs {
+    display: flex;
+    padding-top: 70px;
+    border-bottom: 1px solid #eda;
+
+    .tab{
+        flex-grow: 1;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 15px;
+        text-align: center;
+
+        &.selected{
+            background-color: #dc9;
+            color: #233;
+        }
+    }
+}

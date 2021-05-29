@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import DetailsComponent from '../../components/details/details.component';
+import TabsComponent from '../../components/tabs/tabs.component';
 import NewsComponent from '../../components/news/news.component';
 
 import './item-page.styles.scss';
@@ -57,7 +57,7 @@ class ItemPage extends React.Component {
                 height: 300,
                 hAxis: {
                     format: 'MMM YYYY',
-                    gridlines: {count: 12, color: '#222'},
+                    gridlines: {count: 12, color: '#233'},
                     textStyle: { fontName: 'Raleway', color: '#ddd'}
                 },
                 vAxis: {
@@ -71,8 +71,8 @@ class ItemPage extends React.Component {
                 trendlines: {
                     0: {type: 'linear', color: '#ccc', opacity: .3}
                 },
-                chartArea: { backgroundColor: '#222', color: '#ddd', height: '75%', width: '100%'},
-                backgroundColor: '#222'
+                chartArea: { backgroundColor: '#233', color: '#ddd', height: '75%', width: '100%'},
+                backgroundColor: '#233'
             };
 
             const chart = new google.visualization.LineChart(document.getElementById('chart_div'));
@@ -83,11 +83,15 @@ class ItemPage extends React.Component {
     };
     render(){
         return(
-            <div className="item-page page">
-                <div className='title'>Item Page {this.state.lastVal}</div>
-                <div id="chart_div"></div>
-                <NewsComponent />
-                <DetailsComponent />
+            <div className="item-page">
+                <TabsComponent />
+                <div className='page'>
+                    <div className='title f25'>Item Page {this.state.lastVal}</div>
+                    <div className='chart-wrapper'>
+                        <div id="chart_div"></div>
+                    </div>
+                    <NewsComponent />
+                </div>
             </div>
         );
     };
