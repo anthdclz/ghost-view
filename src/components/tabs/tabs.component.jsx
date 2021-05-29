@@ -100,7 +100,6 @@ class TabsComponent extends React.Component {
     handleClick = (url, e) => {
         e.preventDefault();
         const { history } = this.props;
-        const { isSummary } = this.state;
         history.push(url);
         if(history.location.pathname.includes('summary')){
             this.setState({ isSummary: true });
