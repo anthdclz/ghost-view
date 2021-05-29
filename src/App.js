@@ -25,7 +25,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/gallery' component={GalleryPage} />
-          <Route path='/gallery/' component={ItemPage} />
+          <Route path='/gallery/summary' component={ItemPage} />
+          <Route path='/gallery/details' component={ItemPage} />
           <Route path='/browse' component={BrowsePage} />
           <Route path='/trey' component={TreyPage} />
         </Switch>
