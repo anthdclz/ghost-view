@@ -36,6 +36,10 @@ a {
     box-sizing: border-box !important;
 }
 
+h1, h2 {
+  color: #eda;
+}
+
 .f25 {
     font-size: 25px;
 }
