@@ -8,7 +8,7 @@ import SignInSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up.component'
 import { Route, Switch } from 'react-router-dom';
 
 import { GlobalStyle } from './global.styles';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 const BrowsePage = () => (
   <div>Browse</div>
@@ -30,8 +30,22 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount(){
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if(userAuth){
+        const memberRef = await createUserProfileDocument(userAuth);
+
+        memberRef.onSnapshot(snapshot => {
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              ...snapshot.data()
+            }
+          });
+        });
+      }
+      this.setState({
+        currentUser: userAuth
+      });
     });
   }
 

@@ -11,7 +11,7 @@ const Header = ({ currentUser }) => (
         <Link className='hdr-option' to='browse'>BROWSE</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         {
             currentUser ? (
-                <a className='hdr-option' onClick={() => auth.signOut()}>SIGN OUT</a>
+                <span className='hdr-option' onClick={() => auth.signOut()}>SIGN OUT</span>
             ):(
                 <Link className='hdr-option' to='sign-in'>SIGN IN</Link>
             )
