@@ -56,15 +56,15 @@ class SignUpComponent extends React.Component {
         const {displayName, email, password, confirmPassword } = this.state;
         return(
             <div className='sign-up'>
-                <h2 className='title'>I do not have an account</h2>
-                <span>Sign up with your email and password</span>
+                <h2>Create an account</h2>
+                <span className='title'>Sign up for a new account</span>
                 <form className='sign-up-form' onSubmit={this.handleSubmit}>
                     <FormInputComponent
                         type='text'
                         name='displayName'
                         value={displayName}
                         onChange={this.handleChange}
-                        label='display name'
+                        label='Display Name'
                         required
                     />
                     <FormInputComponent
@@ -72,7 +72,7 @@ class SignUpComponent extends React.Component {
                         name='email'
                         value={email}
                         onChange={this.handleChange}
-                        label='email'
+                        label='Email'
                         required
                     />
                     <FormInputComponent
@@ -80,7 +80,7 @@ class SignUpComponent extends React.Component {
                         name='password'
                         value={password}
                         onChange={this.handleChange}
-                        label='password'
+                        label='Password'
                         required
                     />
                     <FormInputComponent
@@ -88,7 +88,7 @@ class SignUpComponent extends React.Component {
                         name='confirmPassword'
                         value={confirmPassword}
                         onChange={this.handleChange}
-                        label='confirm password'
+                        label='Confirm Password'
                         required
                     />
                     <CustomButton type='submit'>Sign Up</CustomButton>

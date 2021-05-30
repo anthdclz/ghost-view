@@ -66,6 +66,31 @@ h1, h2 {
     .news-item .text {
         display: none;
     }
+    .sign-in-sign-up {
+      width: unset;
+      display: flex;
+      flex-direction: column;
+
+      .custom-button{
+        margin-bottom: 20px;
+      }
+    }
+    .sign-in {
+      width: 100%;
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .sign-up {
+      width: 100%;
+      margin-top: 100px;
+
+      .custom-button{
+        width: 100%;
+      }
+    }
 }
 
 `;

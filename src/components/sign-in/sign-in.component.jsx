@@ -36,14 +36,14 @@ class SignInComponent extends React.Component {
     render(){
         return(
             <div className='sign-in'>
-                <h2>I already have an account</h2>
-                <span className='title'>Sign in with your email and password</span>
+                <h2>Sign in with Email</h2>
+                <span className='title'>Or sign in with Google</span>
 
                 <form onSubmit={this.handleSubmit}>
-                    <FormInputComponent name='email' type='email' label='email' value={this.state.email} handleChange={this.handleChange} required />
-                    <FormInputComponent name='password' type='password' label='password' value={this.state.password} handleChange={this.handleChange} required />
+                    <FormInputComponent name='email' type='email' label='Email' value={this.state.email} handleChange={this.handleChange} required />
+                    <FormInputComponent name='password' type='password' label='Password' value={this.state.password} handleChange={this.handleChange} required />
                     <div className='buttons'>
-                        <CustomButton type='submit'>Sign In</CustomButton>
+                        <CustomButton type='submit'>Sign In with Email</CustomButton>
                         <CustomButton onClick={signInWithGoogle} isGoogleSignIn> Sign in with Google </CustomButton>
                     </div>
                 </form>
