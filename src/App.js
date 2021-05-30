@@ -38,12 +38,12 @@ class App extends React.Component {
   componentWillUnmount(){
     this.unsubscribeFromAuth();
   }
-  
+
   render(){
     return (
       <div className="App">
         <GlobalStyle />
-        <Header />
+        <Header currentUser={this.state.currentUser} />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/gallery' component={GalleryPage} />

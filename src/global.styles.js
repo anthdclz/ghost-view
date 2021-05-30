@@ -28,7 +28,9 @@ a {
   text-decoration: none;
   color: #dc9;
 }
-  
+* {
+  box-sizing: border-box;
+}
 *, *:before, *:after {  
     -webkit-box-sizing: border-box !important;
     -moz-box-sizing: border-box !important;
@@ -37,7 +39,7 @@ a {
 }
 
 h1, h2 {
-  color: #eda;
+  color: #feb;
 }
 
 .f25 {

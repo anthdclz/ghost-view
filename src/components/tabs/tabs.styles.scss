@@ -1,7 +1,7 @@
 .tabs {
     display: flex;
     padding-top: 70px;
-    border-bottom: 1px solid #eda;
+    border-bottom: 1px solid #feb;
 
     .tab{
         flex-grow: 1;
@@ -11,7 +11,7 @@
         text-align: center;
 
         &.selected{
-            background-color: #dc9;
+            background-color: #feb;
             color: #233;
         }
     }
