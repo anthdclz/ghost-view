@@ -5,7 +5,7 @@ import GalleryPage from './pages/gallery-page/gallery-page.component';
 import ItemPage from './pages/item-page/item-page.component';
 import SignInSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up.component';
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { GlobalStyle } from './global.styles';
@@ -64,15 +64,25 @@ class App extends React.Component {
           <Route path='/gallery/details' component={ItemPage} />
           <Route path='/browse' component={BrowsePage} />
           <Route path='/trey' component={TreyPage} />
-          <Route path='/sign-in' component={SignInSignUpPage} />
+          <Route
+            exact
+            path='/sign-in' 
+            render={
+              ()=> this.props.currentUser ? (<Redirect to='/' />) : <SignInSignUpPage />
+            }
+          />
         </Switch>
       </div>
     );
   }
 };
 
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
