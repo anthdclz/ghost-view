@@ -84,6 +84,10 @@ h1, h2 {
     .wicked-grim {
         font-size: 24px;
     }
+
+    & .volume-block{
+        height:36px;
+    }
   }
     .news-item .text {
         display: none;
