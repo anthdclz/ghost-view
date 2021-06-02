@@ -1,45 +1,40 @@
 const GALLERY_DATA = [
     {
         id: 1,
-        title: "Grim",
-        color: "#eee",
-        titleColor: '#eee',
+        title: "The Dark Roast",
+        titleColor: '#d22',
         coverBkgd: 'cream',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 2,
-        title: "Runner",
-        color: "#cee",
-        titleColor: '#cee',
+        title: "Fresh Pot",
+        titleColor: '#d33',
         coverBkgd: 'sky',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 3,
-        title: "Spook",
-        color: "#eec",
-        titleColor: '#eec',
+        title: "The Ground Lore",
+        titleColor: '#333',
         coverBkgd: 'gold',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 4,
-        title: "Raider",
-        color: "#ece",
-        titleColor: '#ece',
+        title: "The Dark Roast",
+        titleColor: '#fe1',
         coverBkgd: 'fire',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 5,
-        title: "Spider",
-        color: "#ecc",
-        titleColor: '#ecc',
+        title: "Arabica Nights",
+        titleColor: '#149',
         coverBkgd: 'cream',
         font: 'AwesomeJourney',
         flair: "BatIcon"
@@ -47,133 +42,119 @@ const GALLERY_DATA = [
     {
         id: 6,
         title: "Coffeehead",
-        color: "#eee",
-        titleColor: '#eee',
+        titleColor: '#fe1',
         coverBkgd: 'midnight',
         font: 'Superion',
         flair: "BroomIcon"
     },
     {
         id: 7,
-        title: "Sullen",
-        color: "#eec",
-        titleColor: '#eec',
+        title: "Sullen Mist",
+        titleColor: '#ffeccc',
         coverBkgd: 'royal',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 8,
-        title: "Brash",
-        color: "#ccc",
-        titleColor: '#ccc',
+        title: "Wicked Grim",
+        titleColor: '#418',
         coverBkgd: 'cream',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 9,
-        title: "Vind",
-        color: "#cec",
-        titleColor: '#cec',
+        title: "Coffeehead",
+        titleColor: '#6b9',
         coverBkgd: 'cream',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 10,
-        title: "Bluft",
-        color: "#cee",
-        titleColor: '#cee',
+        title: "The Shelter Forsaken",
+        titleColor: '#418',
         coverBkgd: 'sky',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 11,
-        title: "Dash",
-        color: "#eee",
-        titleColor: '#eee',
+        title: "The Dark Roast",
+        titleColor: '#d22',
         coverBkgd: 'cream',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 12,
-        title: "Jack-O-Lantern",
-        color: "#cce",
-        titleColor: '#cce',
+        title: "The Ground Lore",
+        titleColor: '#ffeccc',
         coverBkgd: 'fire',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 13,
-        title: "Thrash",
-        color: "#cce",
-        titleColor: '#cce',
+        title: "Fresh Pot",
+        titleColor: '#d22',
         coverBkgd: 'cream',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 14,
-        title: "Knight",
-        color: "#cce",
+        title: "The Dark Roast",
+        titleColor: '#149',
         coverBkgd: 'gold',
-        font: 'ReallyAwesome',
+        font: 'Superion',
         flair: "BatIcon"
     },
     {
         id: 15,
-        title: "Scythe",
-        color: "#cce",
+        title: "Arabica Nights",
         coverBkgd: 'midnight',
-        titleColor: '#eee',
+        titleColor: '#ffeccc',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 16,
-        title: "Grill",
-        color: "#cce",
-        titleColor: '#eee',
+        title: "The Shelter Forsaken",
+        titleColor: '#d22',
         coverBkgd: 'cream',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 17,
-        title: "Guard",
-        color: "#cce",
-        titleColor: '#eee',
-        coverBkgd: 'cream',
-        font: 'ReallyAwesome',
-        flair: "BatIcon"
-    },
-    {
-        id: 18,
-        title: "Skate",
-        color: "#cce",
-        titleColor: '#eee',
+        title: "Wicked Grim",
+        titleColor: '#fe1',
         coverBkgd: 'royal',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
+        id: 18,
+        title: "Coffeehead",
+        titleColor: '#149',
+        coverBkgd: 'cream',
+        font: 'ReallyAwesome',
+        flair: "BatIcon"
+    },
+    {
         id: 19,
-        title: "Coffee",
-        color: "#cce",
-        titleColor: '#eee',
+        title: "The Ground Lore",
+        titleColor: '#d33',
         coverBkgd: 'sky',
         font: 'ReallyAwesome',
         flair: "BatIcon"
     },
     {
         id: 20,
-        title: "Cafe",
-        color: "#cce",
-        titleColor: '#eee',
+        title: "Arabica Nights",
+        titleColor: '#6b9',
         coverBkgd: 'cream',
         font: 'ReallyAwesome',
         flair: "BatIcon"

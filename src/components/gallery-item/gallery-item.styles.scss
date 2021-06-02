@@ -1,11 +1,13 @@
 .gallery-item {
     font-family: 'DayWithoutSun';
     font-size: 24px;
+    line-height:32px;
     height: 268px;
     width: 175px;
     background-color:#ffeccc;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     margin: 0 20px 60px 20px;
@@ -19,7 +21,7 @@
         background-image: linear-gradient(rgb(206, 0, 0), rgb(255, 227, 144));
     }
     &.gold{
-        background-image: linear-gradient(rgb(248, 224, 10) 67%, rgb(248, 236, 136));
+        background-image: linear-gradient(rgb(248, 212, 10) 67%, rgb(248, 236, 136));
     }
     &.sky{
         background-image: linear-gradient(rgb(181, 234, 250) 67%, #eed);
@@ -29,6 +31,42 @@
     }
     &.midnight{
         background-image: linear-gradient(165deg, rgb(8, 64, 150) 67%, rgb(132, 176, 208));
+    }
+
+    .the-dark-roast {
+        font-family: 'Superion';
+        font-size: 18px;
+        line-height: 40px;
+    }
+    .arabica-nights {
+        font-family: 'AwesomeJourney';
+        font-size: 32px;
+        line-height: 36px;
+        text-align: center;
+    }
+    .coffeehead {
+        font-family: 'Superion';
+        line-height: 40px;
+    }
+    .the-ground-lore {
+        font-family: 'AwesomeJourney';
+        font-size: 21px;
+    }
+    .fresh-pot {
+        font-family: 'ReallyAwesome';
+        font-size: 36px;
+    }
+    .shelter-forsaken {
+        font-family: 'AwesomeJourney';
+        text-align: center;
+    }
+    .wicked-grim {
+        font-family: 'AwesomeJourney';
+        font-size: 28px;
+    }
+    .sullen-mist {
+        font-family: 'ReallyAwesome';
+        font-size: 32px;
     }
 }
 

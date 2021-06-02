@@ -68,6 +68,22 @@ h1, h2 {
     height: 222px;
     width: 145px;
     font-size: 20px;
+    line-height: 28px;
+
+    .the-dark-roast {
+        font-size: 15px;
+        line-height: 32px;
+    }
+    .arabica-nights {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .the-ground-lore {
+        font-size: 18px;
+    }
+    .wicked-grim {
+        font-size: 24px;
+    }
   }
     .news-item .text {
         display: none;
