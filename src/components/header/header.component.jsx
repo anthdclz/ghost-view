@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
+import HomeIconIcon from '../home-icon/home-icon.component';
 
 import './header.styles.scss';
 
 const Header = ({ currentUser }) => (
     <div className='header'>
-        <Link className='hdr-home' to='/'>HOME</Link>
+        <Link className='hdr-home' to='/'>
+            <HomeIconIcon />
+        </Link>
         <div>
         <Link className='hdr-option' to='browse'>BROWSE</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         {

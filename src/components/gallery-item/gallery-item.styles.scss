@@ -1,15 +1,48 @@
 .gallery-item {
-    height: 200px;
-    width: 180px;
-    background-color: #eee;
+    font-family: 'DayWithoutSun';
+    font-size: 24px;
+    height: 268px;
+    width: 175px;
+    background-color:#ffeccc;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin: 0 20px 20px 0;
+    margin: 0 20px 60px 20px;
 
     & div{
         padding: 10px 0 0;
         color: #333;
     }
+
+    &.fire{
+        background-image: linear-gradient(rgb(206, 0, 0), rgb(255, 227, 144));
+    }
+    &.gold{
+        background-image: linear-gradient(rgb(248, 224, 10) 67%, rgb(248, 236, 136));
+    }
+    &.sky{
+        background-image: linear-gradient(rgb(181, 234, 250) 67%, #eed);
+    }
+    &.royal{
+        background-image: linear-gradient(rgb(60, 0, 132) 33%, rgb(72, 24, 132));
+    }
+    &.midnight{
+        background-image: linear-gradient(165deg, rgb(8, 64, 150) 67%, rgb(132, 176, 208));
+    }
+}
+
+@font-face {
+    font-family: 'AwesomeJourney';
+    src: url('../../assets/fonts/awesome-journey.otf' );
+}
+
+@font-face {
+    font-family: 'ReallyAwesome';
+    src: url('../../assets/fonts/really-awesome.ttf');
+}
+
+@font-face {
+    font-family: 'Superion';
+    src: url('../../assets/fonts/superion.otf');
 }

@@ -7,10 +7,10 @@ body {
   color: #eee;
 
   & .page {
-    padding: 90px 60px 20px;
+    padding: 90px 40px 20px;
 
     @media screen and (max-width:900px) {
-      padding: 90px 20px 20px;
+      padding: 90px 0 20px;
     }
   }
 
@@ -39,6 +39,7 @@ a {
 }
 
 h1, h2 {
+  margin-left: 20px;
   color: #feb;
 }
 
@@ -63,6 +64,11 @@ h1, h2 {
 }
 
 @media screen and (max-width:900px) {
+  .gallery-item {
+    height: 222px;
+    width: 145px;
+    font-size: 20px;
+  }
     .news-item .text {
         display: none;
     }
