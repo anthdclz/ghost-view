@@ -19,8 +19,8 @@ class GalleryPage extends React.Component {
             <div className="page">
                 <h2>Gallery</h2>
                 <div className='gallery-page'>
-                    {this.state.gallery.map(({id, ...otherProps}) => ( 
-                        <GalleryItem key={id} {...otherProps} /> 
+                    {this.state.gallery.map((item) => ( 
+                        <GalleryItem key={item.id} item={item} /> 
                     ))}
                 </div>
             </div>

@@ -1,11 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import { withRouter } from 'react-router-dom';
 
 import { BatIcon, CandleIcon, CauldronIcon, GhostIcon, PumpkinIcon, BagIcon, GrinderIcon, HotIcon, KettleIcon, MugIcon, PaperIcon, PotIcon } from '../flair/flair.component';
 
+import { addFav } from '../../redux/favorites/favorites.actions'
 import './gallery-item.styles.scss';
 
-const GalleryItem = ({ id, title, titleColor, coverBkgd, flair, num, vol, history, match }) => {
+const GalleryItem = ({ item, history, match, addFav }) => {
+    const { title, titleColor, coverBkgd, flair, num, vol } = item;
     const flairBlock = (flair) => {
         switch (flair) {
             case 'BatIcon':
@@ -61,7 +65,10 @@ const GalleryItem = ({ id, title, titleColor, coverBkgd, flair, num, vol, histor
     const number = num > 0 ? num : '';
     const volume = vol ? vol : '';
     return (
-        <div className={`gallery-item ${coverBkgd}`} onClick={() => history.push(`${match.url}/summary/${title.toLowerCase()}`)}>
+        <div 
+            className={`gallery-item ${coverBkgd}`} 
+            //onClick={() => history.push(`${match.url}/summary/${title.toLowerCase()}`)}
+        >
             <div
                 className={`title ${titleBlock(title)}`}
                 style={{ color: titleColor }}
@@ -71,8 +78,13 @@ const GalleryItem = ({ id, title, titleColor, coverBkgd, flair, num, vol, histor
                 <div className='number' style={{ color: titleColor }}>{number}</div>
                 <div className='volume'>{volume}</div>
             </div>
+            <div onClick={()=> addFav(item)}>ADD FAV</div>
         </div>
     );
 };
 
-export default withRouter(GalleryItem);
+const mapDispatchToProps = dispatch => ({
+    addFav: fav => dispatch(addFav(fav))
+});
+
+export default connect(null, mapDispatchToProps)(withRouter(GalleryItem));
