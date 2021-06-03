@@ -6,6 +6,8 @@ import { withRouter } from 'react-router-dom';
 import { BatIcon, CandleIcon, CauldronIcon, GhostIcon, PumpkinIcon, BagIcon, GrinderIcon, HotIcon, KettleIcon, MugIcon, PaperIcon, PotIcon } from '../flair/flair.component';
 
 import { addFav } from '../../redux/favorites/favorites.actions'
+import StarIconIcon from '../star-icon/star-icon.component';
+
 import './gallery-item.styles.scss';
 
 const GalleryItem = ({ item, history, match, addFav }) => {
@@ -67,7 +69,7 @@ const GalleryItem = ({ item, history, match, addFav }) => {
     return (
         <div 
             className={`gallery-item ${coverBkgd}`} 
-            //onClick={() => history.push(`${match.url}/summary/${title.toLowerCase()}`)}
+            onClick={() => history.push(`${match.url}/summary/${title.toLowerCase()}`)}
         >
             <div
                 className={`title ${titleBlock(title)}`}
@@ -78,7 +80,9 @@ const GalleryItem = ({ item, history, match, addFav }) => {
                 <div className='number' style={{ color: titleColor }}>{number}</div>
                 <div className='volume'>{volume}</div>
             </div>
-            <div onClick={()=> addFav(item)}>ADD FAV</div>
+            {/* <div className='fav-tag'>
+                <StarIconIcon onClick={()=> addFav(item)} />
+            </div> */}
         </div>
     );
 };
