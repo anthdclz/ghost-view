@@ -1,0 +1,10 @@
+.gallery-item {
+    &.item-block {
+        width: 25vw;
+        margin: 0 20px 60px 0;
+
+        &:hover {
+            filter: unset
+        }
+    }
+}

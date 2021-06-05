@@ -4,4 +4,11 @@
 
 .chart-wrapper {
     height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#chart_div {
+    width: 65vw;
 }

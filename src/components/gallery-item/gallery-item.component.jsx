@@ -3,45 +3,15 @@ import { connect } from 'react-redux';
 
 import { withRouter } from 'react-router-dom';
 
-import { BatIcon, CandleIcon, CauldronIcon, GhostIcon, PumpkinIcon, BagIcon, GrinderIcon, HotIcon, KettleIcon, MugIcon, PaperIcon, PotIcon } from '../flair/flair.component';
-
 import { addFav } from '../../redux/favorites/favorites.actions'
+import flairBlock from '../flair/flair.utils';
 import StarIconIcon from '../star-icon/star-icon.component';
 
 import './gallery-item.styles.scss';
 
 const GalleryItem = ({ item, history, match, addFav }) => {
     const { title, titleColor, coverBkgd, flair, num, vol } = item;
-    const flairBlock = (flair) => {
-        switch (flair) {
-            case 'BatIcon':
-                return <BatIcon />;
-            case 'CandleIcon':
-                return <CandleIcon />;
-            case 'CauldronIcon':
-                return <CauldronIcon />;
-            case 'GhostIcon':
-                return <GhostIcon />;
-            case 'PumpkinIcon':
-                return <PumpkinIcon />;
-            case 'BagIcon':
-                return <BagIcon />;
-            case 'GrinderIcon':
-                return <GrinderIcon />;
-            case 'HotIcon':
-                return <HotIcon />;
-            case 'KettleIcon':
-                return <KettleIcon />;
-            case 'MugIcon':
-                return <MugIcon />;
-            case 'PaperIcon':
-                return <PaperIcon />;
-            case 'PotIcon':
-                return <PotIcon />;
-            default:
-                return <BagIcon />;
-        }
-    }
+
     const titleBlock = (title) => {
         switch (title) {
             case 'The Dark Roast':

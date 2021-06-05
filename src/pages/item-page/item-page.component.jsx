@@ -6,6 +6,7 @@ import { setLatestItem } from '../../redux/item/item.actions'
 import startChart from '../../components/item-chart/item-chart.component';
 
 import TabsComponent from '../../components/tabs/tabs.component';
+import ItemBlock from '../../components/item-block/item-block.component';
 import NewsComponent from '../../components/news/news.component';
 import DetailsComponent from '../../components/details/details.component';
 
@@ -56,6 +57,7 @@ class ItemPage extends React.Component {
                     <div className='page'>
                         <div className='title f25'>{latestItem ? latestItem.title : ''} {this.state.lastVal}</div>
                         <div className='chart-wrapper'>
+                            {latestItem ? <ItemBlock key={latestItem.id} item={latestItem} /> : null}
                             <div id="chart_div"></div>
                         </div>
                         <NewsComponent />
