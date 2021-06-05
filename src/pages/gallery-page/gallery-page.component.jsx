@@ -14,7 +14,6 @@ class GalleryPage extends React.Component {
     };
 
     render(){
-        console.log(this.state.gallery);
         return (
             <div className="page">
                 <h2>Gallery</h2>

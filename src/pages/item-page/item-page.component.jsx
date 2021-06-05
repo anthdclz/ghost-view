@@ -25,16 +25,14 @@ class ItemPage extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         const { setLatestItem, history } = this.props;
         const gallery = GALLERY_DATA;
-        const pathSplit = history.location.pathname.split('/');
-        const urlTitle = pathSplit[pathSplit.length - 1];
-        const existingItem = gallery.find(item => item.title === urlTitle);
+        const urlSearchAttrs = history.location.search.substring(1);
+        const urlObj = JSON.parse('{"' + decodeURI(urlSearchAttrs).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+        const existingItem = gallery.find(item => item.id === parseInt(urlObj.id));
         if (existingItem) {
-            const setItem = async () => {
-                const theItem = await setLatestItem(existingItem);
-            };
-            setItem();
+            setLatestItem(existingItem);
         }
         const { isSummary } = this.state;
         this.setState(isSummary ? {
@@ -45,7 +43,7 @@ class ItemPage extends React.Component {
             isSummary: false
         });
         if (isSummary) {
-            startChart(); // TODO: Fix. Creates error on details page
+            startChart();
         }
     }
     render() {
@@ -55,7 +53,6 @@ class ItemPage extends React.Component {
                 <TabsComponent history={this.props.history} currentItem={latestItem} />
                 {isSummary === true ? (
                     <div className='page'>
-                        <div className='title f25'>{latestItem ? latestItem.title : ''} {this.state.lastVal}</div>
                         <div className='chart-wrapper'>
                             {latestItem ? <ItemBlock key={latestItem.id} item={latestItem} /> : null}
                             <div id="chart_div"></div>

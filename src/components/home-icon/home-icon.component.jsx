@@ -1,10 +1,13 @@
 import React from 'react';
-import { ReactComponent as HomeIcon } from '../../assets/icons/fi-br-home.svg';
+import { ReactComponent as HomeIconSvg } from '../../assets/icons/fi-br-home.svg';
+import { ReactComponent as BackIconSvg } from '../../assets/icons/fi-br-angle-left.svg';
 
 import './home-icon.styles.scss';
 
-const HomeIconIcon = () => (
-    <HomeIcon />
+export const HomeIcon = () => (
+    <HomeIconSvg />
 );
 
-export default HomeIconIcon;
+export const BackIcon = () => (
+    <BackIconSvg />
+);

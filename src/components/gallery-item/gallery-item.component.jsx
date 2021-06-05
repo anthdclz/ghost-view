@@ -10,39 +10,16 @@ import StarIconIcon from '../star-icon/star-icon.component';
 import './gallery-item.styles.scss';
 
 const GalleryItem = ({ item, history, match, addFav }) => {
-    const { title, titleColor, coverBkgd, flair, num, vol } = item;
-
-    const titleBlock = (title) => {
-        switch (title) {
-            case 'The Dark Roast':
-                return 'the-dark-roast';
-            case 'Arabica Nights':
-                return 'arabica-nights';
-            case 'Coffeehead':
-                return 'coffeehead';
-            case 'The Ground Lore':
-                return 'the-ground-lore';
-            case 'Fresh Pot':
-                return 'fresh-pot';
-            case 'The Shelter Forsaken':
-                return 'shelter-forsaken';
-            case 'Wicked Grim':
-                return 'wicked-grim';
-            case 'Sullen Mist':
-                return 'sullen-mist';
-            default:
-                return '';
-        }
-    }
+    const { id, title, titleColor, coverBkgd, flair, num, vol } = item;
     const number = num > 0 ? num : '';
     const volume = vol ? vol : '';
     return (
         <div 
             className={`gallery-item ${coverBkgd}`} 
-            onClick={() => history.push(`${match.url}/summary/${title.toLowerCase()}`)}
+            onClick={() => history.push(`${match.url}/summary/${title.toLowerCase()}?id=${id}`)}
         >
             <div
-                className={`title ${titleBlock(title)}`}
+                className={`title ${title.replaceAll(' ', '-')}`}
                 style={{ color: titleColor }}
             >{title}</div>
             {flairBlock(flair)}

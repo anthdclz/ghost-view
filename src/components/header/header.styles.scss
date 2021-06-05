@@ -12,8 +12,22 @@
       padding: 20px;
     }
 
+    & .hdr-left, & .hdr-right {
+      display: flex;
+    }
+
     .hdr-option {
       cursor: pointer;
     }
-  }
+
+    .hdr-right .hdr-option {
+      margin-left: 40px;
+    }
+  
+    .title {
+      color: #feb;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+}
   

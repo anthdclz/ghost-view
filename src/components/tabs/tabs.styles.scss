@@ -4,6 +4,7 @@
     border-bottom: 1px solid #feb;
 
     .tab{
+        cursor: pointer;
         flex-grow: 1;
         font-size: 15px;
         font-weight: 600;
@@ -16,9 +17,3 @@
         }
     }
 }
-.page {
-    .title {
-        text-transform: capitalize;
-    }
-}
-

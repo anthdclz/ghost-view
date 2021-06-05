@@ -16,13 +16,12 @@ class TabsComponent extends React.Component {
         }
     };
     componentDidMount(){
-        const { history, isSummary, setIsSummary } = this.props;
+        const { history, setIsSummary } = this.props;
         setIsSummary(history.location.pathname.includes('summary'));
         this.setState({
             newsUrl: this.state.newsUrl.replace('details', 'summary'),
             detailsUrl: history.location.pathname.replace('summary', 'details'),
         });
-        console.log('det: ' + this.state.detailsUrl, ', summary: ' + this.state.newsUrl)
     };
     handleClick = (url, e) => {
         e.preventDefault();
