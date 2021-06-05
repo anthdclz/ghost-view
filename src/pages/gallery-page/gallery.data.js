@@ -1,7 +1,7 @@
 const GALLERY_DATA = [
     {
         id: 1,
-        title: "The Dark Roast",
+        title: "the dark roast",
         titleColor: '#d22',
         coverBkgd: 'cream',
         flair: "KettleIcon",
@@ -10,7 +10,7 @@ const GALLERY_DATA = [
     },
     {
         id: 2,
-        title: "Fresh Pot",
+        title: "fresh pot",
         titleColor: '#d33',
         coverBkgd: 'sky',
         flair: "PotIcon",
@@ -19,7 +19,7 @@ const GALLERY_DATA = [
     },
     {
         id: 3,
-        title: "The Ground Lore",
+        title: "the ground lore",
         titleColor: '#333',
         coverBkgd: 'gold',
         flair: "GrinderIcon",
@@ -28,7 +28,7 @@ const GALLERY_DATA = [
     },
     {
         id: 4,
-        title: "The Dark Roast",
+        title: "the dark roast",
         titleColor: '#fe1',
         coverBkgd: 'fire',
         flair: "HotIcon",
@@ -37,7 +37,7 @@ const GALLERY_DATA = [
     },
     {
         id: 5,
-        title: "Arabica Nights",
+        title: "arabica nights",
         titleColor: '#149',
         coverBkgd: 'cream',
         flair: "BagIcon",
@@ -46,7 +46,7 @@ const GALLERY_DATA = [
     },
     {
         id: 6,
-        title: "Coffeehead",
+        title: "coffeehead",
         titleColor: '#fe1',
         coverBkgd: 'midnight',
         flair: "MugIcon",
@@ -55,7 +55,7 @@ const GALLERY_DATA = [
     },
     {
         id: 7,
-        title: "Sullen Mist",
+        title: "sullen mist",
         titleColor: '#ffeccc',
         coverBkgd: 'royal',
         flair: "BatIcon",
@@ -64,7 +64,7 @@ const GALLERY_DATA = [
     },
     {
         id: 8,
-        title: "Wicked Grim",
+        title: "wicked grim",
         titleColor: '#418',
         coverBkgd: 'cream',
         flair: "CauldronIcon",
@@ -73,7 +73,7 @@ const GALLERY_DATA = [
     },
     {
         id: 9,
-        title: "Coffeehead",
+        title: "coffeehead",
         titleColor: '#6b9',
         coverBkgd: 'cream',
         flair: "PaperIcon",
@@ -82,7 +82,7 @@ const GALLERY_DATA = [
     },
     {
         id: 10,
-        title: "The Shelter Forsaken",
+        title: "the shelter forsaken",
         titleColor: '#418',
         coverBkgd: 'sky',
         flair: "PumpkinIcon",
@@ -91,7 +91,7 @@ const GALLERY_DATA = [
     },
     {
         id: 11,
-        title: "The Dark Roast",
+        title: "the dark roast",
         titleColor: '#d22',
         coverBkgd: 'cream',
         flair: "BagIcon",
@@ -100,7 +100,7 @@ const GALLERY_DATA = [
     },
     {
         id: 12,
-        title: "The Ground Lore",
+        title: "the ground lore",
         titleColor: '#ffeccc',
         coverBkgd: 'fire',
         flair: "HotIcon",
@@ -109,7 +109,7 @@ const GALLERY_DATA = [
     },
     {
         id: 13,
-        title: "Fresh Pot",
+        title: "fresh pot",
         titleColor: '#d22',
         coverBkgd: 'cream',
         flair: "PotIcon",
@@ -118,7 +118,7 @@ const GALLERY_DATA = [
     },
     {
         id: 14,
-        title: "The Dark Roast",
+        title: "the dark roast",
         titleColor: '#149',
         coverBkgd: 'gold',
         flair: "MugIcon",
@@ -127,7 +127,7 @@ const GALLERY_DATA = [
     },
     {
         id: 15,
-        title: "Arabica Nights",
+        title: "arabica nights",
         coverBkgd: 'midnight',
         titleColor: '#ffeccc',
         flair: "BagIcon",
@@ -136,7 +136,7 @@ const GALLERY_DATA = [
     },
     {
         id: 16,
-        title: "The Shelter Forsaken",
+        title: "the shelter forsaken",
         titleColor: '#d22',
         coverBkgd: 'cream',
         flair: "GhostIcon",
@@ -145,7 +145,7 @@ const GALLERY_DATA = [
     },
     {
         id: 17,
-        title: "Wicked Grim",
+        title: "wicked grim",
         titleColor: '#fe1',
         coverBkgd: 'royal',
         flair: "CandleIcon",
@@ -154,7 +154,7 @@ const GALLERY_DATA = [
     },
     {
         id: 18,
-        title: "Coffeehead",
+        title: "coffeehead",
         titleColor: '#149',
         coverBkgd: 'cream',
         flair: "PaperIcon",
@@ -163,7 +163,7 @@ const GALLERY_DATA = [
     },
     {
         id: 19,
-        title: "The Ground Lore",
+        title: "the ground lore",
         titleColor: '#d33',
         coverBkgd: 'sky',
         flair: "GrinderIcon",
@@ -172,7 +172,7 @@ const GALLERY_DATA = [
     },
     {
         id: 20,
-        title: "Arabica Nights",
+        title: "arabica nights",
         titleColor: '#6b9',
         coverBkgd: 'cream',
         flair: "MugIcon",
