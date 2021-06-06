@@ -47,6 +47,10 @@ h1, h2 {
     font-size: 25px;
 }
 
+.f20 {
+    font-size: 20px;
+}
+
 .f15 {
     font-size: 15px;
 }

@@ -29,18 +29,22 @@ class Header extends React.Component {
                 </div>
                         {
                         isItemPage && latestItem ? (
-                            <div className='title f25'>{latestItem.title} {latestItem.num > 0 ? latestItem.num : ''}</div>
+                            <div className='title'>{latestItem.title} {latestItem.num > 0 ? latestItem.num : ''}</div>
 
                         ) : null
                     }
                 <div className='hdr-right'>
-                    <Link className='hdr-option' to='browse'>BROWSE</Link>
                     {
-                        currentUser ? (
+                        !isItemPage ? (
+                            <Link className='hdr-option' to='browse'>BROWSE</Link>
+                        ) : null
+                    }                
+                    {
+                        !isItemPage && currentUser ? (
                             <span className='hdr-option' onClick={() => auth.signOut()}>SIGN OUT</span>
-                        ) : (
+                        ) : !isItemPage ? (
                             <Link className='hdr-option' to='sign-in'>SIGN IN</Link>
-                        )
+                        ) : null
                     }
                 </div>
             </div>

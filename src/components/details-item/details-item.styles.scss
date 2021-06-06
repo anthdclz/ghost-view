@@ -1,0 +1,11 @@
+.detail-item {
+    display:flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 238, 187, 0.5);
+    padding: 20px 0 0;
+    margin:5px 0 20px;
+
+    & .val{
+        font-weight: 600;
+    }
+}

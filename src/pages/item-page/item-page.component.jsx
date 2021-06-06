@@ -25,11 +25,10 @@ class ItemPage extends React.Component {
     }
 
     componentDidMount() {
-        window.scrollTo(0, 0);
         const { setLatestItem, history } = this.props;
         const gallery = GALLERY_DATA;
         const urlSearchAttrs = history.location.search.substring(1);
-        const urlObj = JSON.parse('{"' + decodeURI(urlSearchAttrs).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+        const urlObj = urlSearchAttrs ? JSON.parse('{"' + decodeURI(urlSearchAttrs).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}') : {id: 1};
         const existingItem = gallery.find(item => item.id === parseInt(urlObj.id));
         if (existingItem) {
             setLatestItem(existingItem);
