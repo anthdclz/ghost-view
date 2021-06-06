@@ -2,7 +2,7 @@ import FavoritesActionTypes from './favorites.types';
 import { addRemoveFav } from './favorites.utils';
 
 const INITIAL_STATE = {
-    favorites: []
+    list: []
 }
 
 const favoritesReducer = (state = INITIAL_STATE, action) => {
@@ -10,7 +10,7 @@ const favoritesReducer = (state = INITIAL_STATE, action) => {
         case FavoritesActionTypes.ADD_FAV:
             return {
                 ...state,
-                favorites: addRemoveFav(state.favorites, action.payload)
+                list: addRemoveFav(state.list, action.payload)
             }
         case FavoritesActionTypes.REMOVE_FAV:
             return {

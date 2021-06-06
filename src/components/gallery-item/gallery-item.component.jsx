@@ -13,6 +13,7 @@ const GalleryItem = ({ item, history, match, addFav }) => {
     const { id, title, titleColor, coverBkgd, flair, num, vol } = item;
     const number = num > 0 ? num : '';
     const volume = vol ? vol : '';
+
     return (
         <div 
             className={`gallery-item ${coverBkgd}`} 
