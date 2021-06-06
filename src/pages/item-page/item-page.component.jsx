@@ -8,6 +8,7 @@ import startChart from '../../components/item-chart/item-chart.component';
 import TabsComponent from '../../components/tabs/tabs.component';
 import ItemBlock from '../../components/item-block/item-block.component';
 import NewsComponent from '../../components/news/news.component';
+import NewsFlair from '../../components/news-flair/news-flair.component';
 import DetailsComponent from '../../components/details/details.component';
 
 import './item-page.styles.scss';
@@ -56,7 +57,9 @@ class ItemPage extends React.Component {
                             {latestItem ? <ItemBlock key={latestItem.id} item={latestItem} /> : null}
                             <div id="chart_div"></div>
                         </div>
-                        <NewsComponent />
+                        <NewsComponent key='1' start='1' />
+                        <NewsFlair />
+                        <NewsComponent key='2' start='2' />
                     </div>
                 ) : (
                     <div className='page'>

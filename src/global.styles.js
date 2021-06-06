@@ -93,6 +93,25 @@ h1, h2 {
         height:36px;
     }
   }
+    .chart-wrapper {
+      flex-direction: column;
+      height:394px;
+
+      .gallery-item.item-block{
+        width:100%;
+        height: 84px;
+        margin:0;
+
+        & .flair-image{
+          height: 64px;
+        }
+      }
+
+      #chart_div {
+        width: 100%;
+        height: 300px;
+      }
+    }
     .news-item .text {
         display: none;
     }
