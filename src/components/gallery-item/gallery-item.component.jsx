@@ -2,15 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { withRouter } from 'react-router-dom';
-
+import { selectFavItems } from '../../redux/favorites/favorites.selectors';
 import { addFav } from '../../redux/favorites/favorites.actions'
 import flairBlock from '../flair/flair.utils';
-// import { StarSolidIcon } from '../home-icon/home-icon.component';
+import { StarSolidIcon } from '../home-icon/home-icon.component';
 
 import './gallery-item.styles.scss';
 
-const GalleryItem = ({ item, history, match, addFav }) => {
+const GalleryItem = ({ item, list, history, match }) => {
     const { id, title, titleColor, coverBkgd, flair, num, vol } = item;
+    const alreadyFaved = list.find(fav => fav.id === item.id);
+    const favComponent = alreadyFaved ? (
+        <div className='fav-tag'>
+                <StarSolidIcon />
+        </div>
+    ) : '';
     const number = num > 0 ? num : '';
     const volume = vol ? vol : '';
 
@@ -28,15 +34,17 @@ const GalleryItem = ({ item, history, match, addFav }) => {
                 <div className='number' style={{ color: titleColor }}>{number}</div>
                 <div className='volume'>{volume}</div>
             </div>
-            {/* <div className='fav-tag'>
-                <StarSolidIcon onClick={()=> addFav(item)} />
-            </div> */}
+            {favComponent}
         </div>
     );
 };
+
+const mapStateToProps = (state) => ({
+    list: selectFavItems(state)
+});
 
 const mapDispatchToProps = dispatch => ({
     addFav: fav => dispatch(addFav(fav))
 });
 
-export default connect(null, mapDispatchToProps)(withRouter(GalleryItem));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(GalleryItem));

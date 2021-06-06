@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { selectFavItems } from '../../redux/favorites/favorites.selectors';
 import { addFav } from '../../redux/favorites/favorites.actions'
 import flairBlock from '../flair/flair.utils';
 import { StarIcon, StarSolidIcon } from '../home-icon/home-icon.component';
@@ -24,8 +24,8 @@ const ItemBlock = ({ item, list, addFav }) => {
     );
 };
 
-const mapStateToProps = ({favorites}) => ({
-    list: favorites.list
+const mapStateToProps = (state) => ({
+    list: selectFavItems(state)
 });
 
 const mapDispatchToProps = dispatch => ({
