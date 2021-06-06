@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import { addFav } from '../../redux/favorites/favorites.actions'
 import flairBlock from '../flair/flair.utils';
-import StarIconIcon from '../star-icon/star-icon.component';
+// import { StarSolidIcon } from '../home-icon/home-icon.component';
 
 import './gallery-item.styles.scss';
 
@@ -28,7 +28,7 @@ const GalleryItem = ({ item, history, match, addFav }) => {
                 <div className='volume'>{volume}</div>
             </div>
             {/* <div className='fav-tag'>
-                <StarIconIcon onClick={()=> addFav(item)} />
+                <StarSolidIcon onClick={()=> addFav(item)} />
             </div> */}
         </div>
     );
