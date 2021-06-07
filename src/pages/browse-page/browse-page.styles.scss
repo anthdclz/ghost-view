@@ -1,0 +1,11 @@
+.browse-page-subtitle{
+    font-weight: 600;
+    margin: 40px 20px;
+}
+.browse-page{
+    display: flex;
+    flex-direction: column;
+    & .link{
+        margin: 20px;
+    }
+}

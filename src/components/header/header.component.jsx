@@ -2,13 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
 import { auth } from '../../firebase/firebase.utils';
+
 import { HomeIcon, BackIcon } from '../home-icon/home-icon.component';
+import { clearAllFavs } from '../../redux/favorites/favorites.actions';
 
 import './header.styles.scss';
 
 class Header extends React.Component {
+    handleSignOut = () => {
+        this.props.clearAllFavs();
+        auth.signOut();
+    }
     render() {
         const { currentUser, latestItem, history } = this.props;
         const isItemPage = history.location.pathname.includes('/gallery/');
@@ -41,7 +46,7 @@ class Header extends React.Component {
                     }                
                     {
                         !isItemPage && currentUser ? (
-                            <span className='hdr-option' onClick={() => auth.signOut()}>SIGN OUT</span>
+                            <span className='hdr-option' onClick={() => this.handleSignOut()}>SIGN OUT</span>
                         ) : !isItemPage ? (
                             <Link className='hdr-option' to='sign-in'>SIGN IN</Link>
                         ) : null
@@ -57,4 +62,8 @@ const mapStateToProps = state => ({
     latestItem: state.item.latestItem
 });
 
-export default connect(mapStateToProps)(withRouter(Header));
+const mapDispatchToProps = dispatch => ({
+    clearAllFavs: () => dispatch(clearAllFavs())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header));

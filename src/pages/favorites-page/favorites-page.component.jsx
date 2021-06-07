@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import GalleryItem from '../../components/gallery-item/gallery-item.component'
@@ -8,7 +9,7 @@ import imgWaveOrange from '../../assets/gallery-items/new_wave_64.10551032303746
 
 import './favorites-page.styles.scss';
 
-const FavoritesPage = ({ list, favsCount }) => {
+const FavoritesPage = ({ currentUser, list, favsCount }) => {
     let exhibits = [];
     if(favsCount < 1){
         exhibits = [
@@ -31,7 +32,16 @@ const FavoritesPage = ({ list, favsCount }) => {
                         )
                     ):(
                         <div className='wall'>
-                            <div className='wall-para'>Check out the Gallery to add your Favorites.</div>
+                            <div className='wall-para'>
+                                {
+                                    currentUser ? null : (
+                                        <Link to='sign-in'>Sign in</Link>
+                                    )
+                                }
+                                {
+                                   currentUser ? 'Check out the Gallery to add your Favorites.': ' and check out the Gallery to add your Favorites.'
+                                }
+                            </div>
                             {
                                 exhibits.map(({id, ...otherProps}) => (
                                     <WallItem key={id} {...otherProps} />
@@ -47,6 +57,7 @@ const FavoritesPage = ({ list, favsCount }) => {
 };
 
 const mapStateToProps = (state) => ({
+    currentUser: state.user.currentUser,
     list: selectFavItems(state),
     favsCount: selectFavItemsCount(state)
 });

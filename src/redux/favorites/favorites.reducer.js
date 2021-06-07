@@ -12,9 +12,10 @@ const favoritesReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 list: addRemoveFav(state.list, action.payload)
             }
-        case FavoritesActionTypes.REMOVE_FAV:
+        case FavoritesActionTypes.CLEAR_ALL_FAVS:
             return {
-                ...state
+                ...state,
+                list: []
             }
         default:
             return state;
