@@ -5,7 +5,7 @@ export const setLatestItem = item => ({
     payload: item
 });
 
-export const setIsSummary = flag => ({
-    type: ItemActionTypes.SET_IS_SUMMARY,
+export const setItemPageTab = flag => ({
+    type: ItemActionTypes.SET_ITEM_PAGE_TAB,
     payload: flag
 });

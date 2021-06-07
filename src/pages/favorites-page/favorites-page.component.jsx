@@ -9,7 +9,6 @@ import imgWaveOrange from '../../assets/gallery-items/new_wave_64.10551032303746
 import './favorites-page.styles.scss';
 
 const FavoritesPage = ({ list, favsCount }) => {
-    console.log(favsCount);
     let exhibits = [];
     if(favsCount < 1){
         exhibits = [

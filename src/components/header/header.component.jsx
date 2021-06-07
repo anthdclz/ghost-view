@@ -21,9 +21,9 @@ class Header extends React.Component {
                                 <HomeIcon />
                             </Link>
                         ) : (
-                            <Link className='hdr-back' to='/gallery'>
+                            <div className='hdr-back' onClick={() => history.goBack()}>
                                 <BackIcon />
-                            </Link>
+                            </div>
                         )
                     }
                 </div>

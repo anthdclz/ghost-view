@@ -2,7 +2,7 @@ import { ItemActionTypes } from './item.types';
 
 const INITIAL_STATE = {
     latestItem: null,
-    isSummary: true
+    itemPageTab: ''
 }
 
 const itemReducer = (state = INITIAL_STATE, action) => {
@@ -12,10 +12,10 @@ const itemReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 latestItem: action.payload
             }
-        case ItemActionTypes.SET_IS_SUMMARY:
+        case ItemActionTypes.SET_ITEM_PAGE_TAB:
             return {
                 ...state,
-                isSummary: action.payload
+                itemPageTab: action.payload
             }
         default:
             return state;

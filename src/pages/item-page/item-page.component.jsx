@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import GALLERY_DATA from '../gallery-page/gallery.data';
-import { setLatestItem } from '../../redux/item/item.actions'
+import { setLatestItem, setItemPageTab } from '../../redux/item/item.actions'
 import startChart from '../../components/item-chart/item-chart.component';
 
 import TabsComponent from '../../components/tabs/tabs.component';
@@ -20,13 +20,13 @@ class ItemPage extends React.Component {
 
         this.state = {
             newsUrl: history.location.pathname,
-            detailsUrl: history.location.pathname,
-            isSummary: history.location.pathname.includes('summary')
+            detailsUrl: history.location.pathname
         }
     }
 
     componentDidMount() {
-        const { setLatestItem, history } = this.props;
+        const { setLatestItem, setItemPageTab, itemPageTab, history } = this.props;
+        setItemPageTab('summary');
         const gallery = GALLERY_DATA;
         const urlSearchAttrs = history.location.search.substring(1);
         const urlObj = urlSearchAttrs ? JSON.parse('{"' + decodeURI(urlSearchAttrs).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}') : {id: 1};
@@ -34,24 +34,16 @@ class ItemPage extends React.Component {
         if (existingItem) {
             setLatestItem(existingItem);
         }
-        const { isSummary } = this.state;
-        this.setState(isSummary ? {
-            detailsUrl: history.location.pathname.replace('summary', 'details'),
-            isSummary: true
-        } : {
-            newsUrl: history.location.pathname.replace('details', 'summary'),
-            isSummary: false
-        });
-        if (isSummary) {
+        if (itemPageTab === 'summary') {
             startChart();
         }
     }
     render() {
-        const { latestItem, isSummary } = this.props;
+        const { latestItem, itemPageTab } = this.props;
         return (
             <div className="item-page">
                 <TabsComponent history={this.props.history} currentItem={latestItem} />
-                {isSummary === true ? (
+                {itemPageTab === 'summary' ? (
                     <div className='page'>
                         <div className='chart-wrapper'>
                             {latestItem ? <ItemBlock key={latestItem.id} item={latestItem} /> : null}
@@ -73,11 +65,12 @@ class ItemPage extends React.Component {
 
 const mapStateToProps = ({ item }) => ({
     latestItem: item.latestItem,
-    isSummary: item.isSummary
+    itemPageTab: item.itemPageTab
 });
 
 const mapDispatchToProps = dispatch => ({
-    setLatestItem: item => dispatch(setLatestItem(item))
+    setLatestItem: item => dispatch(setLatestItem(item)),
+    setItemPageTab: item => dispatch(setItemPageTab(item))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ItemPage));
