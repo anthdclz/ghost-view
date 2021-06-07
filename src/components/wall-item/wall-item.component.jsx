@@ -3,10 +3,10 @@ import { withRouter } from 'react-router-dom';
 
 import './wall-item.styles.scss';
 
-const WallItem = ({title, linkUrl, imgUrl, history}) => (
+const WallItem = ({title, linkUrl, imgUrl, fltr, history}) => (
     <div className='wall-item' onClick={ () => history.push(`${linkUrl}`)}>
         <div
-            className='background-image'
+            className={`background-image ${fltr ? 'filter-contrast' : ''}`}
             style={{
                 backgroundImage: `url(${imgUrl})`
             }} 

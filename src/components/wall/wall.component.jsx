@@ -1,8 +1,8 @@
 import React from 'react';
 import WallItem from '../../components/wall-item/wall-item.component';
-import imgWaveOrange from '../../assets/gallery-items/new_wave_64.10551032303746.svg';
+import imgGallery from '../../assets/banners/ghost-view-gallery.gif';
 import imgWaveBlue from '../../assets/gallery-items/new_wave_447.14939221550185.svg';
-import imgWaveGreen from '../../assets/gallery-items/new_wave_522.7252551408126.svg';
+import imgFavs from '../../assets/banners/ghost-view-favs.gif';
 
 import './wall.styles.scss';
 
@@ -15,20 +15,23 @@ class Wall extends React.Component {
                 {
                     id: 1,
                     title: 'gallery',
-                    imgUrl: imgWaveOrange,
-                    linkUrl: 'gallery'
+                    imgUrl: imgGallery,
+                    linkUrl: 'gallery',
+                    fltr: true
                   },
                   {
                     id: 2,
                     title: 'browse',
                     imgUrl: imgWaveBlue,
-                    linkUrl: 'browse'
+                    linkUrl: 'browse',
+                    fltr: false
                   },
                   {
                     id: 3,
                     title: 'favorites',
-                    imgUrl: imgWaveGreen,
-                    linkUrl: 'favorites'
+                    imgUrl: imgFavs,
+                    linkUrl: 'favorites',
+                    fltr: true
                   }
             ]
         }

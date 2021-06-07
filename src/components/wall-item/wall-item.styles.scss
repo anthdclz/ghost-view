@@ -11,6 +11,10 @@
     background-size: cover;
     position:relative;
     overflow: hidden;
+
+    & .filter-contrast{
+      filter: contrast(133%) blur(3px) brightness(133%);
+    }
   
     &:hover {
       cursor: pointer;
@@ -18,10 +22,6 @@
       & .background-image {
         transform: scale(1.1);
         transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-      }
-
-      & .content {
-        opacity: 0.9;
       }
     }
 
@@ -39,16 +39,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      // border: 1px solid black;
-      // background-color: white;
-      // opacity: 0.6;
       position: absolute;
   
       .title {
-        font-weight: bold;
+        font-weight: 600;
         margin-bottom: 6px;
-        font-size: 24px;
-        color: #eee;
+        font-size: 36px;
+        color: #feb;
+        text-shadow: -2px 0 #233, 0 2px #233, 2px 0 #233, 0 -2px #233, 0 0 30px #233, 0 0 10px #233;
       }
   
       .subtitle {
