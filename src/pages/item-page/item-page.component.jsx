@@ -25,7 +25,7 @@ class ItemPage extends React.Component {
     }
 
     componentDidMount() {
-        const { setLatestItem, setItemPageTab, itemPageTab, history } = this.props;
+        const { setLatestItem, setItemPageTab, history } = this.props;
         setItemPageTab('summary');
         const gallery = GALLERY_DATA;
         const urlSearchAttrs = history.location.search.substring(1);
@@ -33,8 +33,6 @@ class ItemPage extends React.Component {
         const existingItem = gallery.find(item => item.id === parseInt(urlObj.id));
         if (existingItem) {
             setLatestItem(existingItem);
-        }
-        if (itemPageTab === 'summary') {
             startChart();
         }
     }
