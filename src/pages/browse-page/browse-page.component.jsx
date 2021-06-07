@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './browse-page.styles.scss';
 
@@ -51,7 +50,7 @@ class BrowsePage extends React.Component {
                 <div className='browse-page-subtitle'>Goodies and potential time wasters.</div>
                 <div className='browse-page'>
                     {this.state.links.map(({id, name, url}) => ( 
-                        <Link className='link' key={id} to={url}>{name}</Link> 
+                        <a className='link' key={id} href={url}>{name}</a> 
                     ))}
                 </div>
             </div>
