@@ -60,13 +60,13 @@ const drawChart = (lastValue) => {
         };
 
         const chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        google.visualization.events.addListener(chart, 'ready', afterChartDraw);
+        // google.visualization.events.addListener(chart, 'ready', afterChartDraw);
         chart.draw(data, options);
     }
     google.charts.load('current', { packages: ['corechart', 'line'] });
     google.charts.setOnLoadCallback(drawTrendlines);
 }
-const afterChartDraw = () => {
-    console.log('Done drawing chart');
-}
+// const afterChartDraw = () => {
+//     console.log('Done drawing chart');
+// }
 export default startChart;

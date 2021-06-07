@@ -14,5 +14,20 @@
 }
 
 #chart_div {
+    height: 300px;
     width: 65vw;
+
+    .chart-loader{
+        position: relative;
+        display:flex;
+        justify-content: center;
+        height: 300px;
+    
+        .circle-notch-icon{
+            position: absolute;
+            top: 50%;
+            margin-top: -18px
+        }
+    }
 }
+

@@ -10,6 +10,8 @@ import ItemBlock from '../../components/item-block/item-block.component';
 import NewsComponent from '../../components/news/news.component';
 import NewsFlair from '../../components/news-flair/news-flair.component';
 import DetailsComponent from '../../components/details/details.component';
+import { CircleNotchIcon } from '../../components/home-icon/home-icon.component';
+
 
 import './item-page.styles.scss';
 
@@ -45,7 +47,9 @@ class ItemPage extends React.Component {
                     <div className='page'>
                         <div className='chart-wrapper'>
                             {latestItem ? <ItemBlock key={latestItem.id} item={latestItem} /> : null}
-                            <div id="chart_div"></div>
+                            <div id="chart_div">
+                                <div className='chart-loader'><CircleNotchIcon /></div>
+                            </div>
                         </div>
                         <NewsComponent key='1' start='1' />
                         <NewsFlair />
