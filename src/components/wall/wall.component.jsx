@@ -26,9 +26,9 @@ class Wall extends React.Component {
                   },
                   {
                     id: 3,
-                    title: 'trey',
+                    title: 'favorites',
                     imgUrl: imgWaveGreen,
-                    linkUrl: 'trey'
+                    linkUrl: 'favorites'
                   }
             ]
         }

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/header/header.component';
 import HomePage from './pages/home-page/home-page.component';
 import GalleryPage from './pages/gallery-page/gallery-page.component';
+import FavoritesPage from './pages/favorites-page/favorites-page.component';
 import ItemPage from './pages/item-page/item-page.component';
 import SignInSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up.component';
 
@@ -60,6 +61,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/gallery' component={GalleryPage} />
+          <Route exact path='/favorites' component={FavoritesPage} />
           <Route path='/gallery/summary' component={ItemPage} />
           <Route path='/gallery/details' component={ItemPage} />
           <Route path='/browse' component={BrowsePage} />

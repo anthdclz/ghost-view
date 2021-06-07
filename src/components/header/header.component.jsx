@@ -36,7 +36,7 @@ class Header extends React.Component {
                 <div className='hdr-right'>
                     {
                         !isItemPage ? (
-                            <Link className='hdr-option' to='browse'>BROWSE</Link>
+                            <Link className='hdr-option' to='favorites'>FAVS</Link>
                         ) : null
                     }                
                     {

@@ -9,7 +9,7 @@ import { StarSolidIcon } from '../home-icon/home-icon.component';
 
 import './gallery-item.styles.scss';
 
-const GalleryItem = ({ item, list, history, match }) => {
+const GalleryItem = ({ item, list, history }) => {
     const { id, title, titleColor, coverBkgd, flair, num, vol } = item;
     const alreadyFaved = list.find(fav => fav.id === item.id);
     const favComponent = alreadyFaved ? (
@@ -23,7 +23,7 @@ const GalleryItem = ({ item, list, history, match }) => {
     return (
         <div 
             className={`gallery-item ${coverBkgd}`} 
-            onClick={() => history.push(`${match.url}/summary/${title.toLowerCase()}?id=${id}`)}
+            onClick={() => history.push(`/gallery/summary/${title.toLowerCase()}?id=${id}`)}
         >
             <div
                 className={`title ${title.replaceAll(' ', '-')}`}
