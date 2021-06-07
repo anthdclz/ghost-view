@@ -120,12 +120,16 @@ h1, h2 {
       display: flex;
       flex-direction: column;
 
+      & h2{
+        margin-left: 0;
+      }
       .custom-button{
         margin-bottom: 20px;
       }
     }
     .sign-in {
-      width: 100%;
+      width: unset;
+      margin: 0 20px;
 
       .buttons {
         display: flex;
@@ -133,8 +137,8 @@ h1, h2 {
       }
     }
     .sign-up {
-      width: 100%;
-      margin-top: 100px;
+      width: unset;
+      margin: 100px 20px 0 20px;
 
       .custom-button{
         width: 100%;

@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils';
 
-import { HomeIcon, BackIcon } from '../home-icon/home-icon.component';
+import { HomeIcon, BackIcon, StarSolidIcon, UserIcon } from '../home-icon/home-icon.component';
+
 import { clearAllFavs } from '../../redux/favorites/favorites.actions';
 
 import './header.styles.scss';
@@ -17,6 +18,7 @@ class Header extends React.Component {
     render() {
         const { currentUser, latestItem, history } = this.props;
         const isItemPage = history.location.pathname.includes('/gallery/');
+        const isFavsPage = history.location.pathname.includes('/favorites');
         return (
             <div className='header'>
                 <div className='hdr-left'>
@@ -40,15 +42,19 @@ class Header extends React.Component {
                     }
                 <div className='hdr-right'>
                     {
-                        !isItemPage ? (
-                            <Link className='hdr-option' to='favorites'>FAVS</Link>
+                        !isItemPage && !isFavsPage? (
+                            <Link className='hdr-option' to='favorites'>
+                                <StarSolidIcon />
+                            </Link>
                         ) : null
                     }                
                     {
                         !isItemPage && currentUser ? (
                             <span className='hdr-option' onClick={() => this.handleSignOut()}>SIGN OUT</span>
                         ) : !isItemPage ? (
-                            <Link className='hdr-option' to='sign-in'>SIGN IN</Link>
+                            <Link className='hdr-option' to='sign-in'>
+                                <UserIcon />
+                            </Link>
                         ) : null
                     }
                 </div>
