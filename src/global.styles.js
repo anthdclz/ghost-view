@@ -74,18 +74,18 @@ h1, h2 {
     line-height: 28px;
 
     .the-dark-roast {
-        font-size: 15px;
+        font-size: 21px;
         line-height: 32px;
     }
     .arabica-nights {
-        font-size: 28px;
+        font-size: 32px;
         line-height: 32px;
     }
     .the-ground-lore {
-        font-size: 18px;
+        font-size: 15px;
     }
     .wicked-grim {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     & .volume-block{
