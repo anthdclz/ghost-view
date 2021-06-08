@@ -17,21 +17,24 @@ class Wall extends React.Component {
                     title: 'gallery',
                     imgUrl: imgGallery,
                     linkUrl: 'gallery',
-                    fltr: true
+                    fltr: true,
+                    brgt: true
                   },
                   {
                     id: 2,
                     title: 'browse',
                     imgUrl: imgWaveBlue,
                     linkUrl: 'browse',
-                    fltr: false
+                    fltr: false,
+                    brgt: false
                   },
                   {
                     id: 3,
                     title: 'favorites',
                     imgUrl: imgFavs,
                     linkUrl: 'favorites',
-                    fltr: true
+                    fltr: true,
+                    brgt: false
                   }
             ]
         }

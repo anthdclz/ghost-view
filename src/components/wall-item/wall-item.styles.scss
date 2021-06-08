@@ -13,7 +13,11 @@
     overflow: hidden;
 
     & .filter-contrast{
-      filter: contrast(133%) blur(3px) brightness(133%);
+      filter: contrast(133%) blur(3px);
+    }
+  
+    & .filter-brightness{
+      filter: brightness(150%);
     }
   
     &:hover {
