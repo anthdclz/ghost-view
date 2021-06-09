@@ -119,9 +119,6 @@ h1, h2 {
       display: flex;
       flex-direction: column;
 
-      & h2{
-        margin-left: 0;
-      }
       .custom-button{
         margin-bottom: 20px;
       }

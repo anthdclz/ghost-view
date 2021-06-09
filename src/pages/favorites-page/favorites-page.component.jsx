@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import GalleryItem from '../../components/gallery-item/gallery-item.component'
 import { selectFavItems, selectFavItemsCount } from '../../redux/favorites/favorites.selectors';
+import imgGallery from '../../assets/banners/ghost-view-gallery.gif';
 import WallItem from '../../components/wall-item/wall-item.component';
-import imgWaveOrange from '../../assets/gallery-items/new_wave_64.10551032303746.svg';
 
 import './favorites-page.styles.scss';
 
@@ -16,7 +16,7 @@ const FavoritesPage = ({ currentUser, list, favsCount }) => {
             {
                 id: 1,
                 title: 'gallery',
-                imgUrl: imgWaveOrange,
+                imgUrl: imgGallery,
                 linkUrl: 'gallery'
             }
         ];    
