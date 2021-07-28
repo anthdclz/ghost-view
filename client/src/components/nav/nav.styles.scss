@@ -1,0 +1,21 @@
+.nav {
+    background-color: #dc9;
+    color: #233;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    width: 80vw;
+    max-width: 300px;
+    height: 100vh;
+    transform: translate(0);
+    transition: 0.5s ease-in-out;
+
+    a {
+        color: #233;
+        cursor: pointer;
+    }
+
+    &.nav-hidden{
+        transform: translate(-100%);
+    }
+}

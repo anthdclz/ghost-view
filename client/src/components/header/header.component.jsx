@@ -5,15 +5,29 @@ import { withRouter } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils';
 
 import { HomeIcon, BackIcon, StarSolidIcon, UserIcon } from '../home-icon/home-icon.component';
+import NavComponent from '../nav/nav.component';
 
 import { clearAllFavs } from '../../redux/favorites/favorites.actions';
 
 import './header.styles.scss';
 
 class Header extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            isNavVisible: false
+        }
+    }
     handleSignOut = () => {
         this.props.clearAllFavs();
         auth.signOut();
+    }
+    handleNav = () => {
+        console.log('clicked');
+        this.setState({
+            isNavVisible: !this.state.isNavVisible
+        });
+
     }
     render() {
         const { currentUser, latestItem, history } = this.props;
@@ -24,9 +38,12 @@ class Header extends React.Component {
                 <div className='hdr-left'>
                     {
                         !isItemPage ? (
-                            <Link className='hdr-home' to='/'>
-                                <HomeIcon />
-                            </Link>
+                            <div>
+                                <span className='hdr-home' onClick={this.handleNav}>
+                                    <HomeIcon />
+                                </span>
+                                <NavComponent isNavVisible={this.state.isNavVisible} />
+                            </div>
                         ) : (
                             <div className='hdr-back' onClick={() => history.goBack()}>
                                 <BackIcon />
