@@ -15,6 +15,8 @@ import { GlobalStyle } from './global.styles';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 
+import ModalComponent from './components/modal/modal.component';
+
 class App extends React.Component {
   constructor(){
     super();
@@ -69,6 +71,7 @@ class App extends React.Component {
             }
           />
         </Switch>
+        <ModalComponent />
       </div>
     );
   }
