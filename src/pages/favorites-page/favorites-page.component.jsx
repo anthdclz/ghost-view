@@ -15,7 +15,7 @@ const FavoritesPage = ({ currentUser, list, favsCount }) => {
         exhibits = [
             {
                 id: 1,
-                title: 'gallery',
+                title: 'Gallery',
                 imgUrl: imgGallery,
                 linkUrl: 'gallery'
             }
