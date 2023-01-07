@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import GalleryItem from '../../components/gallery-item/gallery-item.component'
 import { selectFavItems, selectFavItemsCount } from '../../redux/favorites/favorites.selectors';
 import imgGallery from '../../assets/banners/ghost-view-gallery.gif';
@@ -35,18 +34,19 @@ const FavoritesPage = ({ currentUser, list, favsCount }) => {
                             <div className='wall-para'>
                                 {
                                     currentUser ? null : (
-                                        <Link to='sign-in'>Sign in</Link>
+                                        <span className='disabled'>Sign in</span>
                                     )
                                 }
                                 {
                                    currentUser ? 'Check out the Gallery to add your Favorites.': ' and check out the Gallery to add your Favorites.'
                                 }
                             </div>
-                            {
+                            <div className='wall-para'>Currently disabled. <Link to='/'>Go back</Link></div>
+                            {/* {
                                 exhibits.map(({id, ...otherProps}) => (
                                     <WallItem key={id} {...otherProps} />
                                 ))
-                            }
+                            } */}
 
                         </div>
                     )
@@ -62,4 +62,4 @@ const mapStateToProps = (state) => ({
     favsCount: selectFavItemsCount(state)
 });
 
-export default connect(mapStateToProps)(withRouter(FavoritesPage));
+export default connect(mapStateToProps)(FavoritesPage);

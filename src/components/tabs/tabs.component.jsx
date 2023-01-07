@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import startChart from '../../components/item-chart/item-chart.component';
 import { setItemPageTab } from '../../redux/item/item.actions';
 
@@ -36,4 +35,4 @@ const mapDispatchToProps = dispatch => ({
     setItemPageTab: item => dispatch(setItemPageTab(item))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TabsComponent));
+export default connect(mapStateToProps, mapDispatchToProps)(TabsComponent);

@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import GalleryItem from '../../components/gallery-item/gallery-item.component'
 import GALLERY_DATA from './gallery.data';
 
@@ -27,4 +26,4 @@ class GalleryPage extends React.Component {
     };
 };
 
-export default withRouter(GalleryPage);
+export default GalleryPage;

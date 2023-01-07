@@ -1,28 +1,39 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './wall-item.styles.scss';
 
-const WallItem = ({title, linkUrl, imgUrl, fltr, brgt, history}) => (
-    <div className='wall-item' onClick={ () => {
-        if (linkUrl.startsWith('http')){
-            window.location.href = linkUrl;
-        } else {
-            history.push(linkUrl);
-        }
-    }}>
-        <div
+const WallItem = ({title, linkUrl, imgUrl, fltr, brgt, history}) => {
+    if (linkUrl.startsWith('http')){
+        return (
+            <div className='wall-item'  onClick={ () => { window.location.href = linkUrl;} }>
+                <div
             className={`background-image${fltr ? ' filter-contrast' : ''}${brgt ? ' filter-brightness' : ''}`}
             style={{
                 backgroundImage: `url(${imgUrl})`
             }} 
-        />
-        <div className='content'>
-            <div className='title'>
-            {title}
+                />
+                <div className='content'>
+                    <div className='title'>{title}</div>
+                </div>
             </div>
-        </div>
-    </div>
-);
+        )
+    }
+    return (
+    <Link to={linkUrl}>
+            <div className='wall-item'>
+                <div
+            className={`background-image${fltr ? ' filter-contrast' : ''}${brgt ? ' filter-brightness' : ''}`}
+            style={{
+                backgroundImage: `url(${imgUrl})`
+            }} 
+                />
+                <div className='content'>
+                    <div className='title'>{title}</div>
+                </div>
+            </div>
+    </Link>
+    )
+};
 
-export default withRouter(WallItem);
+export default WallItem;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import GALLERY_DATA from '../gallery-page/gallery.data';
 import { setLatestItem, setItemPageTab } from '../../redux/item/item.actions'
@@ -75,4 +74,4 @@ const mapDispatchToProps = dispatch => ({
     setItemPageTab: item => dispatch(setItemPageTab(item))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ItemPage));
+export default connect(mapStateToProps, mapDispatchToProps)(ItemPage);

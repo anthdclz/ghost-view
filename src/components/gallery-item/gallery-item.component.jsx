@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { withRouter } from 'react-router-dom';
 import { selectFavItems } from '../../redux/favorites/favorites.selectors';
 import { addFav } from '../../redux/favorites/favorites.actions'
 import flairBlock from '../flair/flair.utils';
@@ -9,7 +8,7 @@ import { StarSolidIcon } from '../home-icon/home-icon.component';
 
 import './gallery-item.styles.scss';
 
-const GalleryItem = ({ item, list, history }) => {
+const GalleryItem = ({ item, list }) => {
     const { id, title, titleColor, coverBkgd, flair, num, vol } = item;
     const alreadyFaved = list.find(fav => fav.id === item.id);
     const favComponent = alreadyFaved ? (
@@ -23,7 +22,7 @@ const GalleryItem = ({ item, list, history }) => {
     return (
         <div 
             className={`gallery-item ${coverBkgd}`} 
-            onClick={() => history.push(`/gallery/summary/${title.toLowerCase()}?id=${id}`)}
+            // onClick={() => history.push(`/gallery/summary/${title.toLowerCase()}?id=${id}`)}
         >
             <div
                 className={`title ${title.replaceAll(' ', '-')}`}
@@ -47,4 +46,4 @@ const mapDispatchToProps = dispatch => ({
     addFav: fav => dispatch(addFav(fav))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(GalleryItem));
+export default connect(mapStateToProps, mapDispatchToProps)(GalleryItem);

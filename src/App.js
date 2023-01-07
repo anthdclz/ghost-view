@@ -7,7 +7,7 @@ import BrowsePage from './pages/browse-page/browse-page.component';
 import ItemPage from './pages/item-page/item-page.component';
 import SignInSignUpPage from './pages/sign-in-sign-up/sign-in-sign-up.component';
 
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { GlobalStyle } from './global.styles';
@@ -51,22 +51,23 @@ class App extends React.Component {
       <div className="App">
         <GlobalStyle />
         <Header />
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route exact path='/gallery' component={GalleryPage} />
-          <Route exact path='/favorites' component={FavoritesPage} />
-          <Route path='/gallery/summary' component={ItemPage} />
-          <Route path='/gallery/details' component={ItemPage} />
-          <Route path='/browse' component={BrowsePage} />
-          <Route path='/favorites' component={FavoritesPage} />
+        <Routes>
+          <Route exact path='/' element={<HomePage />} />
+          <Route exact path='/gallery' element={<GalleryPage />} />
+          <Route exact path='/favorites' element={<FavoritesPage />} />
+          <Route path='/gallery/summary' element={<ItemPage />} />
+          <Route path='/gallery/details' element={<ItemPage />} />
+          <Route path='/browse' element={<BrowsePage />} />
+          <Route path='/favorites' element={<FavoritesPage />} />
           <Route
             exact
             path='/sign-in' 
-            render={
-              ()=> this.props.currentUser ? (<Redirect to='/' />) : <SignInSignUpPage />
-            }
+            // render={
+            //   ()=> this.props.currentUser ? (<Navigate to='/' />) : <SignInSignUpPage />
+            // }
+            element={<SignInSignUpPage />}
           />
-        </Switch>
+        </Routes>
       </div>
     );
   }

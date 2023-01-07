@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils';
 
 import { HomeIcon, BackIcon, StarSolidIcon, UserIcon } from '../home-icon/home-icon.component';
@@ -16,9 +15,9 @@ class Header extends React.Component {
         auth.signOut();
     }
     render() {
-        const { currentUser, latestItem, history } = this.props;
-        const isItemPage = history.location.pathname.includes('/gallery/');
-        const isFavsPage = history.location.pathname.includes('/favorites');
+        const { currentUser, latestItem } = this.props;
+        const isItemPage = window.location.pathname.includes('/gallery/');
+        const isFavsPage = window.location.pathname.includes('/favorites');
         return (
             <div className='header'>
                 <div className='hdr-left'>
@@ -28,8 +27,10 @@ class Header extends React.Component {
                                 <HomeIcon />
                             </Link>
                         ) : (
-                            <div className='hdr-back' onClick={() => history.goBack()}>
-                                <BackIcon />
+                            <div className='hdr-back'>
+                                <Link className='hdr-home' to='/'>
+                                    <BackIcon />
+                                </Link>
                             </div>
                         )
                     }
@@ -72,4 +73,4 @@ const mapDispatchToProps = dispatch => ({
     clearAllFavs: () => dispatch(clearAllFavs())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header));
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

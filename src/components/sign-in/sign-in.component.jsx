@@ -37,7 +37,7 @@ class SignInComponent extends React.Component {
         return(
             <div className='sign-in'>
                 <h2>Sign in with Email</h2>
-                <span className='title'>Or sign in with Google</span>
+                <span className='title disabled'>Sign in with Emai or Google - Currently Disabled</span>
 
                 <form onSubmit={this.handleSubmit}>
                     <FormInputComponent name='email' type='email' label='Email' value={this.state.email} handleChange={this.handleChange} required />
